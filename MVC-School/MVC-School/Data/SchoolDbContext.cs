@@ -7,6 +7,8 @@ namespace MVC_School.Data
     {
 
         public DbSet<Student> Studenten { get; set; }
+
+        public DbSet<Locatie> Locaties { get; set; }
         public SchoolDbContext(DbContextOptions<SchoolDbContext> options) : base(options)
         {
         }
