@@ -9,6 +9,13 @@ namespace MVC_School.Models
 {
     public class Docent
     {
+
+        public Docent()
+        {
+            Vakken = new HashSet<Vak>();
+        }
+
+
         [Key]
         public int Id { get; set; }
 
@@ -23,6 +30,8 @@ namespace MVC_School.Models
         public int LocatieId { get; set; }
 
         public virtual Locatie Locatie { get; set; }
+
+        public ICollection<Vak> Vakken { get; set; }
 
 
     }

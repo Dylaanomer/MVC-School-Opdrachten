@@ -444,3 +444,8 @@ C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-Sc
 C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Docenten\Details.cshtml.g.cs
 C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Docenten\Edit.cshtml.g.cs
 C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Docenten\Index.cshtml.g.cs
+C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Vaks\Create.cshtml.g.cs
+C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Vaks\Delete.cshtml.g.cs
+C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Vaks\Details.cshtml.g.cs
+C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Vaks\Edit.cshtml.g.cs
+C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Vaks\Index.cshtml.g.cs

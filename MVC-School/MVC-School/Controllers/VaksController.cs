@@ -10,25 +10,22 @@ using MVC_School.Models;
 
 namespace MVC_School.Controllers
 {
-    public class DocentenController : Controller
+    public class VaksController : Controller
     {
         private readonly SchoolDbContext _context;
 
-        public DocentenController(SchoolDbContext context)
+        public VaksController(SchoolDbContext context)
         {
             _context = context;
         }
 
-        // GET: Docenten
+        // GET: Vaks
         public async Task<IActionResult> Index()
         {
-            var docenten = await _context.Docenten
-                .Include(d => d.Locatie)
-                .ToArrayAsync();
-            return View(docenten);
+            return View(await _context.Vakken.ToListAsync());
         }
 
-        // GET: Docenten/Details/5
+        // GET: Vaks/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,42 +33,39 @@ namespace MVC_School.Controllers
                 return NotFound();
             }
 
-            var docent = await _context.Docenten
-                .Include(d => d.Locatie)
+            var vak = await _context.Vakken
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (docent == null)
+            if (vak == null)
             {
                 return NotFound();
             }
 
-            return View(docent);
+            return View(vak);
         }
 
-        // GET: Docenten/Create
+        // GET: Vaks/Create
         public IActionResult Create()
         {
-            ViewData["LocatieId"] = new SelectList(_context.Locaties, "Id", "Naam");
             return View();
         }
 
-        // POST: Docenten/Create
+        // POST: Vaks/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Voornaam,Achternaam,LocatieId")] Docent docent)
+        public async Task<IActionResult> Create([Bind("Id,Naam,Docent")] Vak vak)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(docent);
+                _context.Add(vak);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LocatieId"] = new SelectList(_context.Locaties, "Id", "Id", docent.LocatieId);
-            return View(docent);
+            return View(vak);
         }
 
-        // GET: Docenten/Edit/5
+        // GET: Vaks/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,23 +73,22 @@ namespace MVC_School.Controllers
                 return NotFound();
             }
 
-            var docent = await _context.Docenten.FindAsync(id);
-            if (docent == null)
+            var vak = await _context.Vakken.FindAsync(id);
+            if (vak == null)
             {
                 return NotFound();
             }
-            ViewData["LocatieId"] = new SelectList(_context.Locaties, "Id", "Naam", docent.LocatieId);
-            return View(docent);
+            return View(vak);
         }
 
-        // POST: Docenten/Edit/5
+        // POST: Vaks/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Voornaam,Achternaam,LocatieId")] Docent docent)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Naam,Docent")] Vak vak)
         {
-            if (id != docent.Id)
+            if (id != vak.Id)
             {
                 return NotFound();
             }
@@ -104,12 +97,12 @@ namespace MVC_School.Controllers
             {
                 try
                 {
-                    _context.Update(docent);
+                    _context.Update(vak);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DocentExists(docent.Id))
+                    if (!VakExists(vak.Id))
                     {
                         return NotFound();
                     }
@@ -120,11 +113,10 @@ namespace MVC_School.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["LocatieId"] = new SelectList(_context.Locaties, "Id", "Naam", docent.LocatieId);
-            return View(docent);
+            return View(vak);
         }
 
-        // GET: Docenten/Delete/5
+        // GET: Vaks/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,31 +124,30 @@ namespace MVC_School.Controllers
                 return NotFound();
             }
 
-            var docent = await _context.Docenten
-                .Include(d => d.Locatie)
+            var vak = await _context.Vakken
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (docent == null)
+            if (vak == null)
             {
                 return NotFound();
             }
 
-            return View(docent);
+            return View(vak);
         }
 
-        // POST: Docenten/Delete/5
+        // POST: Vaks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var docent = await _context.Docenten.FindAsync(id);
-            _context.Docenten.Remove(docent);
+            var vak = await _context.Vakken.FindAsync(id);
+            _context.Vakken.Remove(vak);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DocentExists(int id)
+        private bool VakExists(int id)
         {
-            return _context.Docenten.Any(e => e.Id == id);
+            return _context.Vakken.Any(e => e.Id == id);
         }
     }
 }

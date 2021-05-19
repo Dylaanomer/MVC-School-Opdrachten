@@ -23,6 +23,8 @@ namespace MVC_School.Models
         [StringLength(40)]
         public string Woonplaats { get; set; }
 
-        
+       
+
+
     }
 }
