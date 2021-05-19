@@ -19,6 +19,7 @@ namespace MVC_School.Models
         public string Achternaam { get; set; }
 
         [ForeignKey("Locatie")]
+        [Display(Name = "Locatie")]
         public int LocatieId { get; set; }
 
         public virtual Locatie Locatie { get; set; }
