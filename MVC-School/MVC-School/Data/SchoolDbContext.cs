@@ -6,6 +6,8 @@ namespace MVC_School.Data
     public class SchoolDbContext : DbContext
     {
 
+        public DbSet<Docent> Docenten { get; set; }
+
         public DbSet<Student> Studenten { get; set; }
 
         public DbSet<Locatie> Locaties { get; set; }
