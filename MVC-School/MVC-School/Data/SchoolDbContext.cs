@@ -8,6 +8,7 @@ namespace MVC_School.Data
 
 
         public DbSet<Vak> Vakken { get; set; }
+
         public DbSet<Docent> Docenten { get; set; }
 
         public DbSet<Student> Studenten { get; set; }
