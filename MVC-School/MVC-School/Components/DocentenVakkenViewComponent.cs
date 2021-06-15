@@ -6,35 +6,30 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVC_School.Data;
 
-
 namespace MVC_School.Components
 {
+    public class DocentenVakkenViewComponent : ViewComponent
 
-    public class LocatieDocentenViewComponent : ViewComponent
     {
-
         private readonly SchoolDbContext _context;
 
-        public LocatieDocentenViewComponent(SchoolDbContext context)
+        public DocentenVakkenViewComponent(SchoolDbContext context)
         {
             _context = context;
         }
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
-            var docenten = await _context.Docenten
+            var vakken = await _context.Docenten
                       .Where(d => d.LocatieId == id)
                       .ToListAsync();
 
-            return View(docenten);
-
-
+            return View(vakken);
 
         }
 
+
+
+
+
     }
-
-
-
-
-
 }
