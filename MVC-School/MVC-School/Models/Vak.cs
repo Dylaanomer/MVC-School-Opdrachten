@@ -23,6 +23,8 @@ namespace MVC_School.Models
 
         public virtual Docent Docenten { get; set; }
 
+        public ICollection<VakStudent> VakStudent { get; set; }
+
 
 
 

@@ -21,6 +21,9 @@ namespace MVC_School.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<VakStudent>()
+                .HasKey(vs => new { vs.StudentId, vs.VakId });
         }
     }
 }

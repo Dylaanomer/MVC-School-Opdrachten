@@ -23,7 +23,7 @@ namespace MVC_School.Models
         [StringLength(40)]
         public string Woonplaats { get; set; }
 
-       
+        public ICollection<VakStudent> VakStudent { get; set; }
 
 
     }

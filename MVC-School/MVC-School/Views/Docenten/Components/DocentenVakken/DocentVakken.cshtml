@@ -1,14 +1,14 @@
-﻿@model IEnumerable<MVC_School.Models.Docent>
+﻿@model IEnumerable<MVC_School.Models.Vak>
 
 <h4>DocentVakken</h4>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Voornaam)
+                @Html.DisplayNameFor(model => model.Naam)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Achternaam)
+                @Html.DisplayNameFor(model => model.Docent)
             </th>
 
         </tr>
@@ -18,10 +18,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Voornaam)
+                    @Html.DisplayFor(modelItem => item.Naam)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Achternaam)
+                    @Html.DisplayFor(modelItem => item.Docent)
                 </td>
 
 

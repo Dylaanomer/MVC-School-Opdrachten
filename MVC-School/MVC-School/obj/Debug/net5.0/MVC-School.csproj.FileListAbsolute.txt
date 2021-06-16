@@ -450,4 +450,4 @@ C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-Sc
 C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Vaks\Edit.cshtml.g.cs
 C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Vaks\Index.cshtml.g.cs
 C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Locaties\Components\LocatieDocenten\Default.cshtml.g.cs
-C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Docenten\DocentVakken.cshtml.g.cs
+C:\Users\glaci\OneDrive\Documents\GitHub\MVC-School Opdrachten\MVC-School\MVC-School\obj\Debug\net5.0\Razor\Views\Docenten\Components\DocentenVakken\DocentVakken.cshtml.g.cs
