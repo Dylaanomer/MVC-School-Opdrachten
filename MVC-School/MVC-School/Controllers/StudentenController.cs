@@ -154,4 +154,29 @@ namespace MVC_School.Controllers
             return _context.Studenten.Any(e => e.Id == id);
         }
     }
+
+    //POST: Studenten.AddVak/5
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> AddVak(VakStudent vakStudent)
+
+    {
+        var existingVakStudent = await _context.VakStudenten
+            .FindAsync(vakStudent.StudentId, vakStudent.VakId);
+
+        if (existingVakStudent == null)
+        {
+            _context.Add(vakStudent);
+        }
+        else
+        {
+            existingVakStudent.Uren = vakStudent.Uren;
+        }
+
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Details), new { id = vakStudent.StudentId });
+
+    }
+
 }
+
